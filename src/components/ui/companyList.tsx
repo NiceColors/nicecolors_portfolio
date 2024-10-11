@@ -51,7 +51,7 @@ export const Companyli: React.FC<CompanyliProp> = ({
             <div className="flex flex-col gap-3 mt-1">
                 <div className="flex gap-1">
                     {positionList.map((position) => (
-                        <Chip radius="sm" size="sm">
+                        <Chip radius="sm" size="sm" key={position}>
                             {position}
                         </Chip>
                     ))}

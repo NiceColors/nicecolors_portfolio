@@ -29,7 +29,7 @@ export const Titleli = ({
             )}
             <div className="flex flex-col flex-1 gap-2 p-2 w-[500px]">
                 {list.map((item) => (
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1" key={item}>
                         <WorkflowIcon size={12} />
                         <span className="text-sm">{item}</span>
                     </div>

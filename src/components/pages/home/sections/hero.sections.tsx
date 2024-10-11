@@ -3,7 +3,7 @@
 import { GithubIcon } from "@/components/ui/icons";
 import WaveCard from "@/components/ui/wavecard";
 import { Image, Tab, Tabs, Tooltip } from "@nextui-org/react";
-import { Instagram, Linkedin } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import { ReactNode, useEffect, useState } from "react";
 
 interface SocialLinkType {
