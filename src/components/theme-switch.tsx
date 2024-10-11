@@ -5,8 +5,8 @@ import { VisuallyHidden } from "@react-aria/visually-hidden";
 import clsx from "clsx";
 import { useTheme } from "next-themes";
 import { FC } from "react";
-
 import { SwitchProps, useSwitch } from "@nextui-org/react";
+
 import { MoonFilledIcon, SunFilledIcon } from "./ui/icons";
 
 export interface ThemeSwitchProps {

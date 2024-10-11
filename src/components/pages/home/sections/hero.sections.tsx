@@ -1,29 +1,29 @@
-'use client'
+"use client";
 
-import { GithubIcon } from "@/components/ui/icons";
-import WaveCard from "@/components/ui/wavecard";
 import { Image, Tab, Tabs, Tooltip } from "@nextui-org/react";
 import { Linkedin } from "lucide-react";
 import { ReactNode, useEffect, useState } from "react";
 
-interface SocialLinkType {
-  url: string
-  icon: ReactNode
-}
+import WaveCard from "@/components/ui/wavecard";
+import { GithubIcon } from "@/components/ui/icons";
 
+interface SocialLinkType {
+  url: string;
+  icon: ReactNode;
+}
 
 export const SocialLink = ({ url, icon }: SocialLinkType) => {
   return (
     <a
-      href={url}
-      target="_blank"
       className=" rounded-md border-2 border-black w-12 h-12 flex flex-col items-center justify-center hover:bg-black cursor-pointer hover:text-white"
+      href={url}
+      rel="noreferrer"
+      target="_blank"
     >
       {icon}
     </a>
   );
 };
-
 
 const FullStackTab = () => {
   const [selected, setSelected] = useState("web");
@@ -32,6 +32,7 @@ const FullStackTab = () => {
   useEffect(() => {
     const handleNextLoop = () => {
       const next = tabs.indexOf(selected) + 1;
+
       setSelected(tabs[next === tabs.length ? 0 : next]);
     };
 
@@ -44,10 +45,10 @@ const FullStackTab = () => {
     <div>
       <div className="rounded-md shadow-lg animate-wave-8 h-fit">
         <Tabs
-          className="contents"
-          size="sm"
           aria-label="Tabs sizes"
+          className="contents"
           selectedKey={selected}
+          size="sm"
           onSelectionChange={(key) => {
             setSelected(key as string);
           }}
@@ -57,24 +58,24 @@ const FullStackTab = () => {
             title={
               <Tooltip
                 showArrow
-                isOpen={selected === "frontend"}
-                size="sm"
                 content="3 anos de experiência"
+                isOpen={selected === "frontend"}
                 placement="top"
+                size="sm"
               >
                 <div>Frontend</div>
               </Tooltip>
             }
-          ></Tab>
+          />
           <Tab
             key="backend"
             title={
               <Tooltip
                 showArrow
-                isOpen={selected === "backend"}
-                size="sm"
                 content="2 anos de experiência"
+                isOpen={selected === "backend"}
                 placement="top"
+                size="sm"
               >
                 <div>Backend</div>
               </Tooltip>
@@ -85,54 +86,48 @@ const FullStackTab = () => {
             title={
               <Tooltip
                 showArrow
-                isOpen={selected === "fullstack"}
-                size="sm"
                 content="2 anos de experiência"
+                isOpen={selected === "fullstack"}
                 placement="top"
+                size="sm"
               >
                 <div>FullStack</div>
               </Tooltip>
             }
           />
-
         </Tabs>
-
-      </div >
-
+      </div>
 
       <div className="flex flex-wrap ">
         <WaveCard duration={2}>
-          <Image src={`/assets/icons/react.svg`} height={30} width={30} />
+          <Image height={30} src={`/assets/icons/react.svg`} width={30} />
         </WaveCard>
         <WaveCard duration={4}>
-          <Image src={`/assets/icons/typescript.svg`} height={30} width={30} />
+          <Image height={30} src={`/assets/icons/typescript.svg`} width={30} />
         </WaveCard>
         <WaveCard duration={6}>
-          <Image src={`/assets/icons/tailwindcss.svg`} height={30} width={30} />
+          <Image height={30} src={`/assets/icons/tailwindcss.svg`} width={30} />
         </WaveCard>
         <WaveCard duration={4}>
-          <Image src={`/assets/icons/node.svg`} height={30} width={30} />
+          <Image height={30} src={`/assets/icons/node.svg`} width={30} />
         </WaveCard>
         <WaveCard duration={2}>
-          <Image src={`/assets/icons/python.svg`} height={30} width={30} />
+          <Image height={30} src={`/assets/icons/python.svg`} width={30} />
         </WaveCard>
       </div>
     </div>
   );
 };
 
-
-
 export const Hero = () => {
-
   const socialLinks: SocialLinkType[] = [
     {
       url: "https://www.linkedin.com/in/nicecolors/",
-      icon: <Linkedin />
+      icon: <Linkedin />,
     },
     {
       url: "https://github.com/nicecolors",
-      icon: <GithubIcon />
+      icon: <GithubIcon />,
     },
   ];
 
@@ -146,20 +141,23 @@ export const Hero = () => {
             </p>
             <p className="mb-2">Desenvolvedor FullStack</p>
             <p>
-              do{" "}
-              <span className="font-bold">Brasil</span>.
+              do <span className="font-bold">Brasil</span>.
             </p>
           </div>
           <p className="text-sm text-justify">
-            Graduando em Sistemas de Informação pela UFRRJ, atuo como Desenvolvedor Front-End responsável desenvolver soluções tecnológicas inovadoras. Utilizo tecnologias modernas como React.js e Next.js, com foco na entrega de soluções eficientes e de alto valor para os clientes.            <br />
+            Graduando em Sistemas de Informação pela UFRRJ, atuo como
+            Desenvolvedor Front-End responsável desenvolver soluções
+            tecnológicas inovadoras. Utilizo tecnologias modernas como React.js
+            e Next.js, com foco na entrega de soluções eficientes e de alto
+            valor para os clientes. <br />
           </p>
         </div>
         <div className="flex gap-2">
           {socialLinks.map((socialLink) => (
             <SocialLink
               key={socialLink.url}
-              url={socialLink.url}
               icon={socialLink.icon}
+              url={socialLink.url}
             />
           ))}
         </div>
@@ -169,9 +167,9 @@ export const Hero = () => {
           <FullStackTab />
         </div>
         <img
-          src={'/assets/hero-image.svg'}
           alt="Hero image."
           className="self-end w-full lg:h-auto h-[300px]"
+          src={"/assets/hero-image.svg"}
         />
       </div>
     </section>

@@ -1,15 +1,13 @@
-
 export interface SiteConfig {
   name: string;
   description: string;
-  navItems: Array<{ label: string; href: string }> | []
+  navItems: Array<{ label: string; href: string }> | [];
   links: {
     twitter: string;
     discord: string;
     github: string;
   };
 }
-
 
 export const siteConfig: SiteConfig = {
   name: "",
@@ -19,5 +17,5 @@ export const siteConfig: SiteConfig = {
     twitter: "https://x.com/NiceCollors",
     discord: "",
     github: "https://github.com/NiceColors",
-  }
+  },
 };

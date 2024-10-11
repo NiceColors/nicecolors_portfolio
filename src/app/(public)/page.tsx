@@ -1,5 +1,3 @@
-
-
 import { Experience } from "@/components/pages/home/sections/experience.sections";
 import { Hero } from "@/components/pages/home/sections/hero.sections";
 import { Skills } from "@/components/pages/home/sections/skills.sections";
