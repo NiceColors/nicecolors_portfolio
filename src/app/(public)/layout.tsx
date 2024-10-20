@@ -12,7 +12,6 @@ export default function RootLayout({
       <div className="relative flex flex-col min-h-lvh container mx-auto max-w-6xl">
         <Navbar />
         <main className=" h-full px-2">{children}</main>
-        <Spacer y={6} />
       </div>
     </>
   );
