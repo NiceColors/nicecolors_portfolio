@@ -4,7 +4,7 @@ import { Skills } from "@/components/pages/home/sections/skills.sections";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-32 mt-32">
+    <div className="flex flex-col gap-32 my-32">
       <Hero />
       <Experience />
       <Skills />

@@ -119,7 +119,7 @@ export default function ScrollableAudioFeatures() {
 
             <div className="flex items-start justify-center md:order-2 order-1">
                 <Card isFooterBlurred className="w-full h-[538px] col-span-12 sm:col-span-7">
-                    <CardHeader className="absolute z-10 top-1 flex-col items-start">
+                    <CardHeader className="absolute z-10 top-0 flex-col items-start bg-black/90">
                         <p className="text-tiny text-white/60 uppercase font-bold">
                             {projects[currentProject].short_description}
                         </p>
