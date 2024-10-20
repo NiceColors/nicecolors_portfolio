@@ -1,23 +1,76 @@
 "use client";
 
+import { GithubIcon } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
+import { Button, Card, CardFooter, CardHeader, Image } from "@nextui-org/react";
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 
-const projects = [
+
+interface IProject {
+    title: string;
+    description: string;
+    short_description?: string;
+    color: string;
+    url: string;
+    align?: "center" | "left" | "right";
+    links?: {
+        href: string;
+        label: string;
+        icon: ReactNode;
+    }[];
+}
+
+const projects: IProject[] = [
     {
-        title: "Biblioteca ",
-        description:
-            "Ensure that your audio maintains consistent relative loudness across one or many recordings.",
+        title: "Empresta Aí",
+        description: "Sistema para bibliotecas focado em automatizar o gerenciamento de livros, produtos e clientes, simplificando tarefas manuais.",
+        short_description: "Sistema para bibliotecas",
         color: "from-purple-400 to-indigo-500",
+        url: "/assets/images/projects/empresta-ai.png",
+        align: "right",
+        links: [
+            {
+                href: "https://github.com/NiceColors/Empresta-Ai-API",
+                label: "API",
+                icon: <GithubIcon />,
+            },
+            {
+                href: "https://github.com/NiceColors/Empresta-Ai-API",
+                label: "Repositório",
+                icon: <GithubIcon />,
+            }
+        ]
     },
     {
-        title: "Speech isolation",
-        description:
-            "Isolate and boost voices, using neural networks trained to distinguish speech from external noise.",
-        color: "from-yellow-400 to-orange-500",
+        title: "Algoritmos de Busca",
+        description: "Implementação dos algoritmos de busca em largura, busca em profundidade e busca A*",
+        short_description: "Algoritmos de busca",
+        color: "from-blue-400 to-cyan-500",
+        url: "/assets/images/projects/search-algorithms.png",
+        links: [
+            {
+                href: "https://github.com/NiceColors/I.A-UFRRJ",
+                label: "Repositório",
+                icon: <GithubIcon />,
+            },
+        ]
     },
-
+    {
+        title: "dt-money",
+        description: "Aplicação de controle financeiro para desktop feita durante o curso Ignite da Rocketseat.",
+        short_description: "Controle financeiro",
+        color: "from-yellow-400 to-amber-500",
+        url: "/assets/images/projects/dt-money.png",
+        align: "center",
+        links: [
+            {
+                href: "https://github.com/NiceColors/dt-money",
+                label: "Repositório",
+                icon: <GithubIcon />,
+            },
+        ]
+    }
 ];
 
 export default function ScrollableAudioFeatures() {
@@ -39,8 +92,12 @@ export default function ScrollableAudioFeatures() {
         "[&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
     );
 
+
+
+
+
     return (
-        <div className="grid max-w-7xl gap-8 md:grid-cols-2 md:items-center h-[calc(100lvh-64px)]">
+        <div className="grid gap-8 md:grid-cols-2 md:items-center h-[calc(100lvh-64px)]">
             <div
                 ref={containerRef}
                 className={scrollContainer}
@@ -61,11 +118,55 @@ export default function ScrollableAudioFeatures() {
             </div>
 
             <div className="flex items-start justify-center md:order-2 order-1">
-                <motion.div
-                    key={currentProject}
-                    transition={{ duration: 0.5 }}
-                    className={`aspect-square w-full md:h-full h-[450px] rounded-3xl bg-gradient-to-br ${projects[currentProject].color}`}
-                />
+                <Card isFooterBlurred className="w-full h-[538px] col-span-12 sm:col-span-7">
+                    <CardHeader className="absolute z-10 top-1 flex-col items-start">
+                        <p className="text-tiny text-white/60 uppercase font-bold">
+                            {projects[currentProject].short_description}
+                        </p>
+                        <h4 className="text-white/90 font-medium text-xl">
+                            {projects[currentProject].title}
+                        </h4>
+                    </CardHeader>
+                    <Image
+                        removeWrapper
+                        alt={projects[currentProject].title}
+                        className="z-0 w-full h-full object-cover"
+                        style={{
+                            objectPosition: projects[currentProject].align ?? 'center'
+                        }}
+                        src={projects[currentProject].url}
+                        disableAnimation
+
+                    />
+                    <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+                        <div className="flex flex-grow gap-2 items-center">
+                            <div
+                                className="rounded-full w-10 h-10 bg-black"
+                            />
+                            <div className="flex flex-col">
+                                <p className="text-tiny text-white/60">
+                                    {projects[currentProject].title}
+                                </p>
+                                <p className="text-tiny text-white/60">
+                                    {projects[currentProject].short_description}
+                                </p>
+                            </div>
+                        </div>
+                        <div className="flex gap-4">
+                            {projects[currentProject].links?.map((link, index) => (
+                                <Button
+                                    key={index}
+                                    size="sm"
+                                    className="text-white flex gap-2"
+                                    variant="flat"
+                                >
+                                    {link.icon}
+                                    {link.label}
+                                </Button>
+                            ))}
+                        </div>
+                    </CardFooter>
+                </Card>
             </div>
         </div>
     );
