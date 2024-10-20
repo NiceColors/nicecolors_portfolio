@@ -11,7 +11,20 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: "",
-  navItems: [],
+  navItems: [
+    {
+      label: "Página Inicial",
+      href: "/",
+    },
+    {
+      label: "Projetos",
+      href: "/projects",
+    },
+    // {
+    //   label: "About",
+    //   href: "/about",
+    // }
+  ],
   description: "",
   links: {
     twitter: "https://x.com/NiceCollors",
