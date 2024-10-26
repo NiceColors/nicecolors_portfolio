@@ -1,6 +1,6 @@
 # Portfolio
 
-This is a personal portfolio website built with Next.js and other modern web technologies.
+This is a personal portfolio website built with Next.js / Typescript / NextUI and TailwindCSS
 ![image](https://github.com/user-attachments/assets/d3bfc1d4-eab8-413c-a0b7-b05901a23087)
 
 
@@ -58,10 +58,6 @@ The project follows the standard Next.js structure with TypeScript support. Key 
 - The project uses Tailwind CSS for styling. You can customize the theme in the `tailwind.config.js` file.
 - Internationalization is handled by react-i18next. Locale files can be found in the `public/locales` directory.
 - Dark mode is implemented using next-themes. You can customize the color scheme in your components.
-
-## Deployment
-
-This project is ready to be deployed on Vercel, the platform from the creators of Next.js. Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## License
 
