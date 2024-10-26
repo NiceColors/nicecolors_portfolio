@@ -1,5 +1,3 @@
-"use client";
-
 import { Spacer, Tooltip } from "@nextui-org/react";
 import Image from "next/image";
 

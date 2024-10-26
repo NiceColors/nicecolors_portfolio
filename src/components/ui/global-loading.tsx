@@ -1,6 +1,6 @@
 import { Spinner } from "@nextui-org/react";
 
-const GlobalLoading = () => {
+export default function RootLoading() {
   return (
     <div className="fixed w-full h-full bg-inherit z-[9999] curosr-unset top-0 left-0">
       <Spinner
@@ -17,4 +17,3 @@ const GlobalLoading = () => {
   );
 };
 
-export default GlobalLoading;

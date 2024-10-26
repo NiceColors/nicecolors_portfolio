@@ -1,6 +1,6 @@
 import { Image } from "@nextui-org/react";
 
-import { TStacks } from "@/components/ui/stackChip";
+import { TStacks } from "@/components/ui/stack-chip";
 
 interface SkillType {
   name: TStacks;

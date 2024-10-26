@@ -1,5 +1,6 @@
 "use client";
 
+import { Link } from "@nextui-org/link";
 import {
   NavbarBrand,
   NavbarContent,
@@ -9,15 +10,14 @@ import {
   NavbarMenuToggle,
   Navbar as NextUINavbar,
 } from "@nextui-org/navbar";
-import { Link } from "@nextui-org/link";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 
-import { GithubIcon, TwitterIcon } from "./icons";
 import { ResumeButton } from "./buttons";
+import { GithubIcon, TwitterIcon } from "./icons";
 
-import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
+import { siteConfig } from "@/config/site";
 
 export const Navbar = () => {
   const pathname = usePathname();

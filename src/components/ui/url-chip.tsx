@@ -1,5 +1,3 @@
-"use client";
-
 import { Chip } from "@nextui-org/react";
 
 interface UrlChipProp {

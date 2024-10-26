@@ -1,4 +1,3 @@
-"use client";
 
 import { Chip, Link, Tooltip } from "@nextui-org/react";
 import dayjs from "dayjs";
