@@ -77,7 +77,7 @@ export default async function Hero() {
         <img
           alt="Hero image."
           className="self-end w-full lg:h-auto h-[300px]"
-          src={"/assets/hero-image.svg"}
+          src={"/assets/images/hero-image.svg"}
         />
       </div>
     </section>
