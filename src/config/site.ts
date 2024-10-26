@@ -10,7 +10,7 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: "",
+  name: "Portfolio",
   navItems: [
     {
       label: "Página Inicial",
