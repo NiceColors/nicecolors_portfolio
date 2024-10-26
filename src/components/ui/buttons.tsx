@@ -5,7 +5,7 @@ export const ResumeButton = () => {
   const downloadResume = () => {
     const link = document.createElement("a");
 
-    link.href = "/assets/CV-2024.pdf";
+    link.href = "/assets/Desenvolvedor Frontend - CV 2024.pdf";
     link.download = "CV-2024.pdf";
     link.click();
   };
