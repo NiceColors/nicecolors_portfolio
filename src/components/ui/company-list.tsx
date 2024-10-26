@@ -48,7 +48,7 @@ export const Companyli: React.FC<CompanyliProp> = ({
       <div className="text-lg font-medium">{name}</div>
       {homepageUrl && (
         <div className="text-sm  text-cyan-700">
-          <Link href={homepageUrl} target="_blank">
+          <Link href={homepageUrl} target="_blank" rel="noreferrer">
             <span>{homepageUrl}</span>
           </Link>
         </div>
