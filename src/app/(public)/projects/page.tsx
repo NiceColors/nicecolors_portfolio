@@ -159,6 +159,9 @@ export default function ScrollableAudioFeatures() {
                                     size="sm"
                                     className="text-white flex gap-2"
                                     variant="flat"
+                                    onClick={() => {
+                                        window.open(link.href, '_blank')
+                                    }}
                                 >
                                     {link.icon}
                                     {link.label}
