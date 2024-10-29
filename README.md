@@ -53,12 +53,6 @@ The project follows the standard Next.js structure with TypeScript support. Key 
 - `styles/`: Global styles and Tailwind CSS configuration
 - `public/`: Static assets
 
-## Customization
-
-- The project uses Tailwind CSS for styling. You can customize the theme in the `tailwind.config.js` file.
-- Internationalization is handled by react-i18next. Locale files can be found in the `public/locales` directory.
-- Dark mode is implemented using next-themes. You can customize the color scheme in your components.
-
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
